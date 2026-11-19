@@ -1,0 +1,43 @@
+body {
+    background-color: #101C30;
+    font-family: Arial, sans-serif;
+}
+
+.profile-card .avatar{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    color : white;
+    font-size : 25px;
+    text-align: left;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.profile-card {
+    background-color: #182B46;
+}
+
+.profile-card h1{
+    color : white;
+    font-size : 28px;
+}
+
+.profile-card h3{
+    color : lightblue;
+    font-size : 18px;
+}
+
+.profile-card p{
+    color : lightgray;
+    font-size : 16px;
+}
+
+.profile-card button{
+    width: 1900px;
+    background-color: blue;
+    color : white;
+    font-size : 20px;
+    border-radius: 10px;
+    padding: 15px;
+}
