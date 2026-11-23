@@ -1,0 +1,79 @@
+.btn{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(248, 227, 195);
+    gap : 200px;
+    padding : 50px;
+}
+
+.childbtn{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 10vh;
+    width : 25vh;
+    border-radius: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-size: 25px;
+    text-align: center;
+    padding : 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    transition:
+        background-color 300ms ease,
+        color 300ms ease,
+        transform 300ms ease,
+        box-shadow 300ms ease;
+}
+
+.gold{
+    background-color: gold;
+    color: blue;
+}
+.gold:hover {
+    background-color: orange;
+    color: white;
+}
+.gold:hover {
+    background-color: #F59E0B;
+    color: white;
+
+    transform: translateY(-4px) rotate(-1deg);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.white{
+    background-color: whitesmoke;
+    color: black;
+}
+.white:hover {
+    background-color: #DBEAFE;
+    color: #1D4ED8;
+
+    transform: scale(1.06);
+}
+
+.recheck{
+    background-color: rgb(102, 97, 251);
+    color: yellowgreen;
+}
+.recheck:hover {
+    background-color: #4438CA;
+    color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hd{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
