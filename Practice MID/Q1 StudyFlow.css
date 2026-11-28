@@ -1,0 +1,93 @@
+body{
+    font-family: sans-serif;
+    margin: 0px;
+    background-color: white;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:20px 20px;
+
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:20px 20px;
+    gap:10px;
+}
+.logo{
+    color: green;
+}
+.logo .hh{
+    color:#f59e0b;
+}
+
+.bdy .left{
+    background-color: #f0fdf4;
+    padding: 20px;
+    flex: 1.1;
+
+}
+.bdy .left .hero{
+    color: #064e3b;
+}
+
+.bdy .left .subtext{
+    color: gray;
+}
+
+.bdy .left .mod{
+    list-style: none;
+    color: green;
+}
+.bdy .left .btn{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    width: 400px;
+}
+.bdy .left .btn .btn1{
+    background-color: #0d5c46;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+.bdy .left .btn .btn2{
+    background-color: white;
+    color: green;
+    padding: 20px;
+    border: 2px solid green;
+    border-radius: 15px;
+}
+.bdy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bdy .frm{
+    display: flex;
+    flex-direction: column;
+    background-color: #fffdf5;
+    padding: 20px;
+    flex: 0.9;
+
+}
+
+.frm .crt{
+    background-color: #0d5c46;
+    color: white;
+    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.bdy .frm .inside{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 12px;
+}

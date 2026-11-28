@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice Exam — Web Programming Mid</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;margin:0;background:#f1f5f9;color:#1f2937;line-height:1.7}
+.banner{background:#111827;color:#fff;padding:26px 22px;text-align:center}
+.banner h1{margin:0 0 6px;font-size:clamp(1.2rem,4vw,1.7rem)}
+.banner p{margin:0;opacity:.85;font-size:14.5px}
+.rules{max-width:1000px;margin:18px auto;padding:16px 22px;background:#fff;border-radius:12px;box-shadow:0 1px 5px rgba(15,23,42,.08)}
+.rules ul{margin:8px 0 0;padding-left:22px}
+.rules li{margin:4px 0}
+.canvas{max-width:1000px;margin:18px auto 50px;padding:0}
+.qlabel{font-weight:800;color:#111827;margin:0 0 6px;font-size:15px}
+.qlabel span{color:#64748b;font-weight:600;font-size:13px}
+.colors{font-size:13px;color:#334155;margin:6px 0 14px}
+.colors b{font-family:Consolas,monospace}
+
+/* ============ TASK 1: StudyFlow landing page ============ */
+.t1{background:#fff;border-radius:4px;padding:0 0 0}
+.t1-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 26px;background:#fafbfc;border:1px solid #e5e7eb;border-bottom:none}
+.t1-logo{font-size:21px;font-weight:800;color:#0d5c46}
+.t1-logo span{color:#f59e0b}
+.t1-links a{color:#374151;text-decoration:none;margin-left:20px;font-size:14px}
+.t1-hero{display:flex;gap:0;border:1px solid #e5e7eb}
+.t1-left{flex:1.2;padding:38px 34px;background:#f0fdf4}
+.t1-left h1{font-size:clamp(1.5rem,3.5vw,2rem);color:#064e3b;margin:0 0 14px;line-height:1.3}
+.t1-left .sub{color:#334155;margin:0 0 18px}
+.t1-feat{list-style:none;padding:0;margin:0 0 22px}
+.t1-feat li{margin:8px 0;color:#0d5c46;font-weight:600;font-size:15px}
+.t1-btnrow{display:flex;gap:12px}
+.t1-right{flex:1;padding:34px 30px;background:#fffdf5}
+.t1-right h2{color:#92400e;margin:0 0 16px;font-size:19px}
+.t1-right label{display:block;font-weight:600;font-size:13.5px;margin:10px 0 4px;color:#374151}
+.t1-right input{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;background:#fff}
+.t1-agree{font-size:13.5px;margin:14px 0;color:#374151}
+.t1-agree a{color:#0d5c46}
+
+/* ============ TASK 2: TaskHub dashboard ============ */
+.t2{background:#f5f6fb;border-radius:4px;padding:0 0 26px}
+.t2-nav{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:14px 26px;border-bottom:1px solid #e5e7eb}
+.t2-logo{font-weight:800;font-size:19px;color:#5b21b6}
+.t2-links a{color:#4b5563;text-decoration:none;margin-left:18px;font-size:14px}
+.t2-links a.on{color:#7c3aed;font-weight:700}
+.t2-avatar{width:42px;height:42px;border-radius:50%;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.t2-navright{display:flex;align-items:center;gap:14px;font-size:13px;color:#6b7280;text-align:right}
+.t2-body{padding:22px 26px}
+.t2-hi h1{margin:0;font-size:24px}
+.t2-hi p{margin:2px 0 18px;color:#6b7280;font-size:14px}
+.t2-stats{display:flex;gap:16px}
+.t2-stat{flex:1;background:#fff;border-radius:12px;padding:16px 18px;box-shadow:0 1px 5px rgba(15,23,42,.08)}
+.t2-stat .k{color:#6b7280;font-size:13.5px}
+.t2-stat .v{font-size:26px;font-weight:800;margin-top:2px}
+.t2-sec{font-weight:800;font-size:17px;margin:24px 0 12px}
+.t2-proj{display:flex;gap:16px}
+.t2-pcard{flex:1;background:#fff;border-radius:12px;padding:16px 18px;box-shadow:0 1px 5px rgba(15,23,42,.08)}
+.t2-pcard h3{margin:0 0 8px;font-size:16px}
+.t2-pcard .desc{color:#6b7280;font-size:13.5px;margin:8px 0}
+.t2-pcard .pct{font-weight:700;font-size:13.5px;margin-top:8px}
+.badge{display:inline-block;padding:4px 14px;border-radius:999px;font-size:12.5px;font-weight:700}
+.track{background:#e5e7eb;height:9px;border-radius:999px;margin-top:8px}
+.track>div{height:100%;border-radius:999px}
+@media(max-width:700px){.t1-hero,.t2-stats,.t2-proj{flex-direction:column}.t2-links{display:none}}
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🎯 Practice Exam — reproduce both designs in HTML + CSS</h1>
+  <p>Same format as your real papers: 2 questions × 15 marks · 90 minutes · one .html file per question</p>
+</div>
+
+<div class="rules">
+  <strong>Rules (copy these habits from the real exam):</strong>
+  <ul>
+    <li>Sketch the page as boxes first (navbar → hero → form → footer), then write HTML.</li>
+    <li>Use <em>every</em> hex code listed below each design, on the element it describes.</li>
+    <li>No frameworks, no external files — one file, CSS inside <code>&lt;style&gt;</code>.</li>
+    <li>When done, open practice-solution.html and compare, then send your code to me for grading.</li>
+  </ul>
+</div>
+
+<div class="canvas">
+
+  <p class="qlabel">Q1. Build the “StudyFlow” landing page <span>[15]</span></p>
+  <p class="colors">
+    Logo “Study<b>Flow</b>”: green <b>#0d5c46</b>, the word “Flow” amber <b>#f59e0b</b> ·
+    left panel background: pale green <b>#f0fdf4</b> · heading text: dark green <b>#064e3b</b> ·
+    right panel background: pale amber <b>#fffdf5</b> · “Start free trial” heading: dark amber <b>#92400e</b> ·
+    “Get Started” button: green <b>#0d5c46</b> with white text · “Watch Video” button: white background, green border and green text ·
+    feature list items: green <b>#0d5c46</b> · “Terms” link: green <b>#0d5c46</b>
+  </p>
+  <div class="t1">
+    <div class="t1-nav">
+      <span class="t1-logo">StudyFlow</span>
+      <span class="t1-links"><a href="#">Features</a><a href="#">Pricing</a><a href="#">Help</a></span>
+    </div>
+    <div class="t1-hero">
+      <div class="t1-left">
+        <h1>Study smarter,<br>not longer.</h1>
+        <p class="sub">Plan your week, track your courses and never miss a deadline. Trusted by 5,000+ students.</p>
+        <ul class="t1-feat">
+          <li>✅ Smart weekly planner</li>
+          <li>✅ Deadline reminders</li>
+          <li>✅ Course progress tracking</li>
+        </ul>
+        <div class="t1-btnrow">
+          <button style="background:#0d5c46;color:#fff;border:none;padding:12px 26px;border-radius:8px;font-size:15px">Get Started</button>
+          <button style="background:#fff;color:#0d5c46;border:2px solid #0d5c46;padding:10px 26px;border-radius:8px;font-size:15px">Watch Video</button>
+        </div>
+      </div>
+      <div class="t1-right">
+        <h2>Start free trial</h2>
+        <label>Student Name</label>
+        <input type="text" placeholder="Your name">
+        <label>University Email</label>
+        <input type="email" placeholder="you@uiu.ac.bd">
+        <label>Password</label>
+        <input type="password" placeholder="Create a password">
+        <p class="t1-agree"><input type="checkbox"> I agree to the <a href="#">Terms</a></p>
+        <button style="background:#0d5c46;color:#fff;border:none;padding:12px 26px;border-radius:8px;font-size:15px;width:100%">Create Account</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="qlabel" style="margin-top:40px">Q2. Build the “TaskHub” freelancer dashboard <span>[15]</span></p>
+  <p class="colors">
+    Page background: <b>#f5f6fb</b> · logo: purple <b>#5b21b6</b> · active link “Home”: purple <b>#7c3aed</b> ·
+    avatar circle: purple <b>#7c3aed</b> with white initials “AR” ·
+    badge “UI Work”: pale lavender <b>#ede9fe</b>, purple text · badge “Urgent”: pale red <b>#fee2e2</b>, red text <b>#b91c1c</b> ·
+    badge “Client Work”: pale amber <b>#fef3c7</b>, amber text <b>#92400e</b> ·
+    progress bar 1: purple fill 85% · bar 2: red fill 40% · bar 3: amber fill 60% · bars all on grey track <b>#e5e7eb</b>
+  </p>
+  <div class="t2">
+    <div class="t2-nav">
+      <span class="t2-logo">TaskHub</span>
+      <span class="t2-links"><a href="#" class="on">Home</a><a href="#">Projects</a><a href="#">Invoices</a><a href="#">Messages</a></span>
+      <span class="t2-navright"><span>Ayesha Rahman<br><b>Freelancer</b></span><span class="t2-avatar">AR</span></span>
+    </div>
+    <div class="t2-body">
+      <div class="t2-hi">
+        <h1>Hi Ayesha</h1>
+        <p>Welcome back to your workspace!</p>
+      </div>
+      <div class="t2-stats">
+        <div class="t2-stat"><div class="k">Projects Done</div><div class="v">42</div></div>
+        <div class="t2-stat"><div class="k">In Progress</div><div class="v">7</div></div>
+        <div class="t2-stat"><div class="k">Earnings</div><div class="v">৳ 58,000</div></div>
+      </div>
+      <div class="t2-sec">Current Projects</div>
+      <div class="t2-proj">
+        <div class="t2-pcard">
+          <h3>UIU Canteen App</h3>
+          <span class="badge" style="background:#ede9fe;color:#6d28d9">UI Work</span>
+          <p class="desc">Redesign the ordering screen...</p>
+          <div class="track"><div style="width:85%;background:#7c3aed"></div></div>
+          <div class="pct">85%</div>
+        </div>
+        <div class="t2-pcard">
+          <h3>Portfolio Website</h3>
+          <span class="badge" style="background:#fee2e2;color:#b91c1c">Urgent</span>
+          <p class="desc">Fix the contact form bug...</p>
+          <div class="track"><div style="width:40%;background:#b91c1c"></div></div>
+          <div class="pct">40%</div>
+        </div>
+        <div class="t2-pcard">
+          <h3>Bkash Clone UI</h3>
+          <span class="badge" style="background:#fef3c7;color:#92400e">Client Work</span>
+          <p class="desc">Build the send-money page...</p>
+          <div class="track"><div style="width:60%;background:#f59e0b"></div></div>
+          <div class="pct">60%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

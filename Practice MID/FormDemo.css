@@ -1,0 +1,17 @@
+body{
+    background-color: paleturquoise;
+    font-family: sans-serif;
+}
+
+.forma{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    max-width: 300px;
+}
+
+.btn{
+    width: 100px;
+    color: white;
+    background-color: green;
+}
